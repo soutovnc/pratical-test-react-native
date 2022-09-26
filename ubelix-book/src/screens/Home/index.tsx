@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { FlatList, StatusBar } from "react-native";
+import { FlatList, StatusBar, View } from "react-native";
 import {
   Container,
   HeaderHome,
@@ -9,13 +9,17 @@ import {
   ContainerAvatarHeader,
   Avatar,
   ScrollableContainer,
-  Title
+  Title,
+  ContainerCategories,
+  CardCategory,
+  CategoryName
 } from "./styles"
 
 import { SearchInput } from "../../components/SearchInput";
 import { Book } from "../../components/Book";
 
 import { api } from "../../services/api";
+import { Category } from "../../components/Category";
 
 interface BookProps {
   author: string;
@@ -124,7 +128,20 @@ export function Home() {
 
         <Title>Categorias</Title>
 
+        <FlatList 
+          data={categories}
+          keyExtractor={(item) => Math.random.toString()}
+          renderItem={({item}) => (
+            <Category />
+          )}
+          showsHorizontalScrollIndicator={false}
+          horizontal
+        />
+
+        <Title>Os mais lidos da semana</Title>
+
         
+
       </ScrollableContainer>
 
     </Container>

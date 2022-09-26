@@ -48,3 +48,4 @@ export const Title = styled.Text`
   font-family: ${({theme}) => theme.fonts.strong};
   color: ${({theme}) => theme.colors.gray600};
 `;
+
