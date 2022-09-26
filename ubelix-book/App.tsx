@@ -6,7 +6,7 @@ import { Lato_900Black, Lato_700Bold, Lato_400Regular } from '@expo-google-fonts
 import { ThemeProvider } from 'styled-components'
 import theme from './src/global/theme'
 
-import {  Text } from 'react-native';
+import { Home } from './src/screens/Home'
 
 export default function App() {
   const [ fontsLoaded ] = useFonts({
@@ -21,7 +21,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Text>Hello</Text>
+      <Home />
     </ThemeProvider>
   );
 }
