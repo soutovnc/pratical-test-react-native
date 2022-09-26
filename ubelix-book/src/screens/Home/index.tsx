@@ -10,9 +10,7 @@ import {
   Avatar,
   ScrollableContainer,
   Title,
-  ContainerCategories,
-  CardCategory,
-  CategoryName
+  
 } from "./styles"
 
 import { SearchInput } from "../../components/SearchInput";
@@ -20,6 +18,8 @@ import { Book } from "../../components/Book";
 
 import { api } from "../../services/api";
 import { Category } from "../../components/Category";
+import { NavBar } from "../../components/NavBar";
+import { MostRead } from "../../components/MostRead";
 
 interface BookProps {
   author: string;
@@ -139,7 +139,20 @@ export function Home() {
         />
 
         <Title>Os mais lidos da semana</Title>
-
+        
+        <FlatList 
+          data={weeklyMostRead}
+          keyExtractor={(item) => Math.random().toString()}
+          renderItem={({item}) => (
+            <MostRead
+              author={item.author}
+              book_image={item.book_image}
+              title={item.title}
+            />
+          )}
+          showsHorizontalScrollIndicator={false}
+          horizontal
+        />
         
 
       </ScrollableContainer>
