@@ -1,3 +1,4 @@
+import { NavigationContainer } from '@react-navigation/native'
 
 import AppLoading from 'expo-app-loading'
 import { useFonts } from 'expo-font'
@@ -7,6 +8,9 @@ import { ThemeProvider } from 'styled-components'
 import theme from './src/global/theme'
 
 import { Home } from './src/screens/Home'
+import { StackRoutes } from './src/routes/stack.routes'
+import { AppRoutes } from './src/routes/app.routes'
+import { Routes } from './src/routes'
 
 export default function App() {
   const [ fontsLoaded ] = useFonts({
@@ -22,6 +26,9 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <Home />
+      {/* <NavigationContainer>
+        <Home />
+      </NavigationContainer> */}
     </ThemeProvider>
   );
 }

@@ -3,6 +3,7 @@ export default {
     bgColor: '#FFFFFF',
     primary: '#673403',
     secondary: '#00DC00',
+    inactiveColor: '#A05105',
 
     gray100: '#F2F2F2',
     gray300: '#BDBDBD',
